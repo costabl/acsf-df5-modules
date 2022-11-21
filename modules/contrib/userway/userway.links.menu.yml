@@ -1,0 +1,6 @@
+userway.admin:
+  title: 'UserWay Widget'
+  description: "Seamless Digital Accessibility with UserWay UserWay's AI-Powered Accessibility Widget is trusted by millions of websites around the world."
+  parent: system.admin_config_system
+  route_name: userway.configuration_controller_index
+  weight: -20

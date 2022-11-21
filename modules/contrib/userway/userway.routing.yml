@@ -1,0 +1,15 @@
+userway.configuration_controller_index:
+  path: '/admin/userway/config'
+  defaults:
+    _controller: '\Drupal\userway\Controller\ConfigurationController::index'
+    _title: 'UserWay Widget Configuration'
+  requirements:
+    _permission: 'access content'
+
+userway.account_controller_index:
+  path: '/admin/userway/account'
+  defaults:
+    _controller: '\Drupal\userway\Controller\AccountController::index'
+    _title: 'index'
+  requirements:
+    _permission: 'access content'

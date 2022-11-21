@@ -1,0 +1,45 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_install()
+ */
+function userway_schema() {
+  $schema['userway_data'] = [
+    'description' => 'Stores module data as key/value pairs per user.',
+    'fields' => [
+      'uid' => [
+        'description' => 'The uid this record affects.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'account' => [
+        'description' => 'The identifier of the customer.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'status' => [
+        'description' => 'UserWay widget status.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['uid'],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall()
+ */
+function your_custom_module_uninstall() {
+  \Drupal::database()->schema()->dropTable('userway_data');
+}

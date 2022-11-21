@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * Implements hook_theme()
+ */
+function userway_theme() {
+  return [
+    'userway' => [
+      'render element' => 'children',
+      'variables' => ['url' => NULL, 'rootUrl' => NULL],
+    ],
+  ];
+}
+
+function userway_page_attachments_alter(array &$page) {
+  $database = Drupal::database();
+  $query = $database->query("SELECT account, status FROM {userway_data}");
+  $widgetData = $query->fetchAssoc();
+
+  if (isset($widgetData['status']) && isset($widgetData['account']) && $widgetData['status'] === '1') {
+    $page['#attached']['html_head'][] = [
+      [
+        '#type' => 'html_tag',
+        '#tag' => 'script',
+        '#attributes' => ['src' => 'https://cdn.userway.org/widget.js?account=' . $widgetData['account']],
+      ],
+      'userway',
+    ];
+  }
+}

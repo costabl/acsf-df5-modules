@@ -1,0 +1,7 @@
+userway:
+  version: 1.1
+  header: true
+  js:
+    js/userway.js: { }
+  dependencies:
+    - core/jquery

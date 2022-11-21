@@ -1,0 +1,16 @@
+{
+  "name": "userway/drupal",
+  "type": "drupal-module",
+  "version": "1.0.1",
+  "description": "Seamless Digital Accessibility with UserWay",
+  "keywords": [
+    "accessibility",
+    "userway"
+  ],
+  "homepage": "https://userway.org/",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/userway",
+    "source": "http://cgit.drupalcode.org/userway"
+  }
+}

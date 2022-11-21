@@ -1,0 +1,11 @@
+name: 'Userway'
+# version: 1.0.0
+type: module
+description: 'Seamless Digital Accessibility with UserWay'
+core: 8.x
+package: "Accessibility"
+core_version_requirement: ^8 || ^9
+# Information added by Drupal.org packaging script on 2021-12-09
+version: '8.x-1.4'
+project: 'userway'
+datestamp: 1639067076
